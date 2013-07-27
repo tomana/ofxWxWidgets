@@ -1,3 +1,6 @@
+Fork of clinthidinger/ofxWxWidgets modified to work for openframeworks 0.7.4 and Ubuntu 13.04.
+
+clinthidinger wrote:
 ofxWxWidgets
 ============
 
