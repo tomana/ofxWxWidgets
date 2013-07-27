@@ -27,9 +27,10 @@ EVT_KEY_UP(ofxWxGLCanvas::OnKeyUp)
 EVT_DROP_FILES(ofxWxGLCanvas::OnDropFiles)
 END_EVENT_TABLE()
 
+int gl_attrib[1] = { WX_GL_DOUBLEBUFFER };
 //----------------------------------------------------------
 ofxWxGLCanvas::ofxWxGLCanvas(wxWindow *parent, int width, int height)
-   : wxGLCanvas(parent, wxID_ANY, wxPoint(-1, -1),	wxSize(width, height), wxSUNKEN_BORDER, wxT("Viewport"), NULL)
+   : wxGLCanvas(parent, wxID_ANY, wxPoint(-1, -1),	wxSize(width, height), wxSUNKEN_BORDER, wxT("Viewport"), gl_attrib)
 {
     timeNow          = 0;
     timeThen         = 0;
@@ -383,7 +384,9 @@ void ofxWxGLCanvas::OnDropFiles(wxDropFilesEvent &event)
         
         for (int fileIdx = 0; fileIdx <  files.size(); ++fileIdx)
         {
-            string fileName(files[fileIdx]);
+
+	    const char* fileName = (const char*)files[fileIdx].mb_str(wxConvUTF8);
+            //string fileName(files[fileIdx]);
             info.files.push_back(fileName);
         }
         

@@ -5,6 +5,7 @@
 #include "wx/wxprec.h"
 #ifndef WX_PRECOMP
 #include "wx/wx.h"
+#include "wx/glcanvas.h"
 #endif
 
 #include "ofBaseApp.h"
@@ -19,7 +20,7 @@
 #ifdef __MACH__
 #include <GLUT/GLUT.h>
 #else
-#include <GL/glut.h>
+#include <glut.h>
 #endif
 #endif
 
@@ -159,10 +160,13 @@ int ofxAppWxWindow::getFrameNum()
 //------------------------------------------------------------
 void ofxAppWxWindow::setWindowTitle(string title)
 {
+/*
     if(topParent != NULL)
     {
+	
         topParent->SetTitle(title);
     }
+*/
 }
 
 //------------------------------------------------------------

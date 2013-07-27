@@ -16,6 +16,8 @@ testApp::testApp(ofxAppWxWindow *win) : window(win)
 //--------------------------------------------------------------
 testApp::~testApp()
 {
+
+	
    if(scene != NULL)
    {
       delete scene;
@@ -27,7 +29,6 @@ testApp::~testApp()
 void testApp::setup()
 {
     ofSetWindowShape(800, 600);
-    ofSetVerticalSync(true);
     glEnable(GL_DEPTH_TEST);
     scene = new testScene();
 }

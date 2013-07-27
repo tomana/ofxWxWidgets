@@ -34,13 +34,15 @@ void ofxWxPickableSceneFrame::OnHiButtonClick(wxCommandEvent &event)
 //-----------------------------------------------------------------------------
 void ofxWxPickableSceneFrame::initRendering()
 {
-    wxWindow *glCanvasParent = FindWindowByName("glCanvasParentPanel");
+const char *ascii_str = "glCanvasParentPanel";
+wxString wstring = wxString::FromAscii(ascii_str);
+    wxWindow *glCanvasParent = FindWindowByName(wstring);
     assert(glCanvasParent != NULL);
     wxSize canvasSize = glCanvasParent->GetSize();
     window = new ofxAppWxWindow(glCanvasParent);
     assert(window != NULL);
     ofSetupOpenGL(window, 800, 600, OF_WINDOW);
-    glCanvasParent->SetMaxClientSize(wxSize(800, 600));
+    //glCanvasParent->SetMaxClientSize(wxSize(800, 600));
     glCanvasParent->SetMaxSize(wxSize(800, 600));
     glCanvasParent->Fit();
     
