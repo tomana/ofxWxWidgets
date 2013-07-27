@@ -1,10 +1,19 @@
 
 
+Only tested on Ubuntu 13.04. Compiled with -fpermissive, but this is probably avoidable.
 
 
 
 
-
-
-INSTALLATION: I
+INSTALLATION:
 ============
+
+Install wxWidgets-2.9.5 or newer, and compile it with opengl. (As far as I know, the repository package does not include gl support.)
+Some guidance is available here: http://stackoverflow.com/questions/14138/enabling-opengl-in-wxwidgets
+
+Make sure the config.make points to the correct libraries. Check 'wx-config --libs --gl-libs'
+
+This repo is also required: https://github.com/clinthidinger/ofxPickableScene
+
+
+And lastly, thank github.com/clinthidinger for his hard work.
